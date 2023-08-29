@@ -1,8 +1,10 @@
 import "./App.css";
 import Timer from "./components/Timer";
 import TimeInput from "./components/TimeInput";
+import PeriodCalculator from "./helpers/PeriodCalculator";
 
 function App() {
+  const timetable = PeriodCalculator(8400);
   return (
     <>
       <div>
@@ -11,6 +13,8 @@ function App() {
         <TimeInput />
         <hr />
         <Timer initialTime={5} />
+        <hr />
+        {console.log(timetable)}
       </div>
     </>
   );
