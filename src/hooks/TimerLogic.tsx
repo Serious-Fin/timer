@@ -2,11 +2,11 @@ import { useState, useEffect } from "react";
 
 interface TimerProps {
   initialTime: number;
+  paused: boolean;
 }
 
-export default function TimerLogic({ initialTime }: TimerProps) {
+export default function TimerLogic({ initialTime, paused }: TimerProps) {
   const [time, setTime] = useState(initialTime);
-  const [paused, setPaused] = useState(false);
 
   useEffect(() => {
     if (paused) {
@@ -17,7 +17,6 @@ export default function TimerLogic({ initialTime }: TimerProps) {
       setTime((time) => time - 1);
 
       if (time - 1 === 0) {
-        setPaused(true);
         clearInterval(timer);
       }
     }, 100);
@@ -25,16 +24,5 @@ export default function TimerLogic({ initialTime }: TimerProps) {
     return () => clearInterval(timer);
   }, [paused, time]);
 
-  const handlePause = () => {
-    if (time > 0) {
-      setPaused(!paused);
-    }
-  };
-
-  const handleReset = () => {
-    setTime(initialTime);
-    setPaused(true);
-  };
-
-  return { time, paused, handlePause, handleReset };
+  return { time };
 }

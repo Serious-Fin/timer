@@ -12,8 +12,8 @@ export default function PeriodCalculator(totalTimeInSeconds: number) {
   const workPeriods = Math.ceil(worktime / 1500);
   const breakPeriods = workPeriods - 1;
 
-  const workPeriodTime = worktime / workPeriods;
-  const breakPeriodTime = breaktime / breakPeriods;
+  const workPeriodTime = Math.floor(worktime / workPeriods);
+  const breakPeriodTime = Math.floor(breaktime / breakPeriods);
 
   timetable.push(workPeriodTime);
 
@@ -24,5 +24,3 @@ export default function PeriodCalculator(totalTimeInSeconds: number) {
 
   return timetable;
 }
-
-// TODO: Fix a bug where time is 300 seconds less than set  because there is one less break than focus period
