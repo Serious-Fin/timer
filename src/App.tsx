@@ -4,7 +4,7 @@ import TimeInput from "./components/TimeInput";
 import PeriodCalculator from "./helpers/PeriodCalculator";
 
 function App() {
-  const timetable = PeriodCalculator(8400);
+  const timetable = PeriodCalculator(1800);
   return (
     <>
       <div>
