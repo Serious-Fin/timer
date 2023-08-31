@@ -1,6 +1,6 @@
 import "./App.css";
 import Timer from "./components/Timer";
-import TimeInput from "./components/TimeInput";
+import TimerUI from "./components/TimerUI";
 import Session from "./components/Session";
 
 function App() {
@@ -9,9 +9,7 @@ function App() {
       <div>
         <h1>Main App</h1>
         <hr />
-        <TimeInput />
-        <hr />
-        <Session timeInSeconds={1801} />
+        <TimerUI />
       </div>
     </>
   );

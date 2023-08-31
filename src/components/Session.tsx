@@ -1,12 +1,17 @@
 import PeriodCalculator from "./../helpers/PeriodCalculator";
 import { useState, useEffect } from "react";
 import TimerFormat from "../helpers/TimerFormat";
+import { Dispatch, SetStateAction } from "react";
 
 interface SessionProps {
   timeInSeconds: number;
+  setActiveSession: Dispatch<SetStateAction<boolean>>;
 }
 
-export default function Session({ timeInSeconds }: SessionProps) {
+export default function Session({
+  timeInSeconds,
+  setActiveSession,
+}: SessionProps) {
   const [chunkIndex, setChunkIndex] = useState(0);
   const [paused, setPaused] = useState(false);
 
@@ -42,6 +47,8 @@ export default function Session({ timeInSeconds }: SessionProps) {
             setTime(timetable[prevIndex + 1]);
             return prevIndex + 1;
           }
+          console.log("Session is over");
+          setActiveSession(false);
           return prevIndex;
         });
       }
