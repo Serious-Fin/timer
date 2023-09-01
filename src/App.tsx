@@ -1,7 +1,5 @@
 import "./App.css";
-import Timer from "./components/Timer";
 import TimerUI from "./components/TimerUI";
-import Session from "./components/Session";
 
 function App() {
   return (

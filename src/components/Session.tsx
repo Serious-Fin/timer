@@ -22,6 +22,18 @@ export default function Session({
     setPaused(!paused);
   }
 
+  // Handle session end when timer ends
+  const handleSessionEnd = () => {
+    setTimeout(() => {
+      setActiveSession(false);
+    }, 500);
+  };
+
+  // Cancel session manually
+  const cancelSession = () => {
+    setActiveSession(false);
+  };
+
   // -----------vvvvvvvvv TIMER CODE vvvvvvvv-------------------
   const [time, setTime] = useState(timetable[chunkIndex]);
 
@@ -48,7 +60,7 @@ export default function Session({
             return prevIndex + 1;
           }
           console.log("Session is over");
-          setActiveSession(false);
+          handleSessionEnd();
           return prevIndex;
         });
       }
@@ -69,6 +81,7 @@ export default function Session({
     <div key={chunkIndex}>
       <p>{timeString}</p>
       <button onClick={handlePause}>{paused ? "Resume" : "Pause"}</button>
+      <button onClick={cancelSession}>Cancel</button>
       <p>Current session index: {chunkIndex}</p>
     </div>
   );

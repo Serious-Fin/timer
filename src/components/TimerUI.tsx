@@ -18,7 +18,9 @@ export default function TimerUI() {
   const [activeSession, setActiveSession] = useState(false);
   const [timeInSeconds, setTimeInSeconds] = useState(0);
 
-  const handleActiveSession = () => {
+  const handleActiveSession = (e: React.FormEvent) => {
+    e.preventDefault();
+
     const hoursAsNumber = Number(hours);
     const minutesAsNumber = Number(minutes);
     const secondsAsNumber = Number(seconds);
@@ -26,7 +28,7 @@ export default function TimerUI() {
     setTimeInSeconds(
       hoursAsNumber * 3600 + minutesAsNumber * 60 + secondsAsNumber
     );
-    setActiveSession(!activeSession);
+    setActiveSession(true);
   };
 
   return (
