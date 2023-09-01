@@ -1,7 +1,8 @@
-import PeriodCalculator from "./../helpers/PeriodCalculator";
+import PeriodCalculator from "../../helpers/PeriodCalculator";
 import { useState, useEffect } from "react";
-import TimerFormat from "../helpers/TimerFormat";
+import TimerFormat from "../../helpers/TimerFormat";
 import { Dispatch, SetStateAction } from "react";
+import styles from "./Session.module.css";
 
 interface SessionProps {
   timeInSeconds: number;
@@ -78,7 +79,7 @@ export default function Session({
   // -----------^^^^^^^^ TIMER CODE ^^^^^^^^-------------------
 
   return (
-    <div key={chunkIndex}>
+    <div key={chunkIndex} className={styles.container}>
       <p>{timeString}</p>
       <button onClick={handlePause}>{paused ? "Resume" : "Pause"}</button>
       <button onClick={cancelSession}>Cancel</button>

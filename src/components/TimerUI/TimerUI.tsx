@@ -1,6 +1,7 @@
-import InputLogic from "../hooks/InputLogic";
+import InputLogic from "../../hooks/InputLogic";
 import { useState } from "react";
-import Session from "./Session";
+import Session from "../Session/Session";
+import styles from "./TimerUI.module.css";
 
 export default function TimerUI() {
   const {
@@ -50,6 +51,7 @@ export default function TimerUI() {
               value={hours}
               onChange={handleHoursChange}
               onBlur={normalizeHours}
+              className={styles.input}
             />
             <input
               type="number"

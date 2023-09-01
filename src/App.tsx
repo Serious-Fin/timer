@@ -1,5 +1,5 @@
 import "./App.css";
-import TimerUI from "./components/TimerUI";
+import TimerUI from "./components/TimerUI/TimerUI";
 
 function App() {
   return (
