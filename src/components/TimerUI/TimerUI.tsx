@@ -42,30 +42,41 @@ export default function TimerUI() {
       )}
 
       {!activeSession && (
-        <div>
-          <h1>INPUT FIELD</h1>
+        <div className={styles.container}>
+          <h1 className={styles.title}>INPUT FIELD</h1>
 
-          <form onSubmit={handleActiveSession}>
-            <input
-              type="number"
-              value={hours}
-              onChange={handleHoursChange}
-              onBlur={normalizeHours}
-              className={styles.input}
-            />
-            <input
-              type="number"
-              value={minutes}
-              onChange={handleMinutesChange}
-              onBlur={normalizeMinutes}
-            />
-            <input
-              type="number"
-              value={seconds}
-              onChange={handleSecondsChange}
-              onBlur={normalizeSeconds}
-            />
-            <button type="submit">Start Session</button>
+          <form onSubmit={handleActiveSession} className={styles.formContainer}>
+            <div className={styles.inputContainer}>
+              <input
+                type="number"
+                value={hours}
+                onChange={handleHoursChange}
+                onBlur={normalizeHours}
+                className={styles.input}
+                placeholder="hh"
+              />
+              <div className={styles.colonSeparator}>:</div>
+              <input
+                type="number"
+                value={minutes}
+                onChange={handleMinutesChange}
+                onBlur={normalizeMinutes}
+                className={styles.input}
+                placeholder="mm"
+              />
+              <div className={styles.colonSeparator}>:</div>
+              <input
+                type="number"
+                value={seconds}
+                onChange={handleSecondsChange}
+                onBlur={normalizeSeconds}
+                className={styles.input}
+                placeholder="ss"
+              />
+            </div>
+            <button type="submit" className={styles.submitButton}>
+              Start Session
+            </button>
           </form>
         </div>
       )}

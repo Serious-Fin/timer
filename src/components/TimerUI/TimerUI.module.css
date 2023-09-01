@@ -1,3 +1,49 @@
+.container {
+  /*border: 2px solid green;*/
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /*set width rules (max, min, default) to keep constant size*/
+}
+
+.title {
+  font-size: 1.7rem;
+}
+
+.formContainer {
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.inputContainer {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.colonSeparator {
+  font-size: 3rem;
+}
+
 .input {
-  border: 2px solid red;
+  width: 120px;
+  height: 100px;
+  font-size: 2rem;
+  text-align: center;
+  --webkit-outer-spin-button: ;
+}
+
+.input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.submitButton {
+  margin: 30px;
+  width: 200px;
+  height: 35px;
+  font-size: 1.1rem;
 }

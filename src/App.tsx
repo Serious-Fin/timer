@@ -1,12 +1,11 @@
-import "./App.css";
 import TimerUI from "./components/TimerUI/TimerUI";
+import styles from "./App.module.css";
 
 function App() {
   return (
     <>
-      <div>
-        <h1>Main App</h1>
-        <hr />
+      <div className={styles.container}>
+        <h1 className={styles.title}>WireTimer</h1>
         <TimerUI />
       </div>
     </>

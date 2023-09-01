@@ -80,10 +80,15 @@ export default function Session({
 
   return (
     <div key={chunkIndex} className={styles.container}>
-      <p>{timeString}</p>
-      <button onClick={handlePause}>{paused ? "Resume" : "Pause"}</button>
-      <button onClick={cancelSession}>Cancel</button>
-      <p>Current session index: {chunkIndex}</p>
+      <p className={styles.timer}>{timeString}</p>
+      <div className={styles.buttonContainer}>
+        <button className={styles.button} onClick={handlePause}>
+          {paused ? "Resume" : "Pause"}
+        </button>
+        <button className={styles.button} onClick={cancelSession}>
+          Cancel
+        </button>
+      </div>
     </div>
   );
 }
